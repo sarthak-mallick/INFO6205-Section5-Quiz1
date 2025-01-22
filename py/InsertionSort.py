@@ -13,7 +13,13 @@ class InsertionSort:
 
     def insert(self, i):
         """Inserts the 'Transition element' into its correct position in the sorted portion of the array."""
-    #     TODO: TO BE IMPLEMENTED
+        currentValue = self.array[i]
+        for j in range(i-1, -1, -1):
+            if currentValue <= self.array[j]:
+                self.swap(j, j+1)
+            else:
+                self.array[j+1] = currentValue  
+                break
 
     def swap(self, i, j):
         self.array[i], self.array[j] = self.array[j], self.array[i]
